@@ -83,12 +83,12 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "Person",
-			"images": "https://media.licdn.com/dms/image/v2/D5603AQE6EDPn_HqMdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1695958815370?e=2147483647&v=beta&t=9brfW4HANqoNceE_xNf4ebRtnLIcHPvZGrrDJdIuW74"
+			"images": "https://media.licdn.com/dms/image/v2/D5603AQE6EDPn_HqMdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1695958815370?e=2147483647&v=beta&t=9brfW4HANqoNceE_xNf4ebRtnLIcHPvZGrrDJdIuW74",
 			"name": "Virak Khun",
-      "email": "mailto:dev.virakkhun@gmail.com",
+			"email": "mailto:dev.virakkhun@gmail.com",
 			"url": "https://rakdotdev.space",
 			"description": "a Software Engineer based in Phnom Penh, graduated from RUPP majored in Computer Science",
-      "jobTitle": "Software Engineer"
+			"jobTitle": "Software Engineer"
 		}
 	</script>
 </svelte:head>
