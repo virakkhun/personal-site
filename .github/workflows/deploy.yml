@@ -43,11 +43,12 @@ jobs:
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rakdotdev.space:${{ github.sha }}
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Setup SSH context
         run: |
-          - echo ${{ secrets.PRIVATE_KEY }} >> ~/.ssh/r101_linode
+          echo ${{ secrets.PRIVATE_KEY }} >> ~/.ssh/r101_linode
 
       - name: SSH to VPS
         run: |
