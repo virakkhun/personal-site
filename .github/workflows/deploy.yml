@@ -46,8 +46,7 @@ jobs:
     steps:
       - name: Setup SSH context
         run: |
-          touch ~/.ssh/r101_linode
-          echo "${{ secrets.PRIVATE_KEY }}" >> ~/.ssh/r101_linode
+          echo "${{ secrets.PRIVATE_KEY }}" >> ~/r101_linode
 
       - name: SSH to VPS
         run: |
