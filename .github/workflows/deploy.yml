@@ -40,11 +40,10 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rakdotdev.space:${{ github.sha }}
 
-      - name: Setup SSH context
-        run: |
-          echo "${{ secrets.PRIVATE_KEY }}" >> ~/r101_linode
-
       - name: SSH to VPS
         run: |
+          mdkir ~/.ssh
+          touch ~/.ssh/r101_linode
+          echo "${{ secrets.PRIVATE_KEY }}" >> ~/r101_linode
           scp -i ~/r101_linode infra/docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/docker-compose.yml
           ssh -i ~/r101_linode ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}; IMAGE_TAG=${{ github.sha }} docker compose up -d
