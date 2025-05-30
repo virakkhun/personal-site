@@ -20,29 +20,38 @@ jobs:
         run: pnpm install
 
       - name: build
-        env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           pnpm build
+          mv dist infra/dist
 
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
         with:
-          path: ./dist
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Switch dir
+        run: cd infra
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/rakdotdev.space:${{ github.sha }}
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Setup SSH context
+        run: |
+          - echo ${{ secrets.PRIVATE_KEY }} >> ~/.ssh/r101_linode
+
+      - name: SSH to VPS
+        run: |
+          scp -i ~/.ssh/r101_linode docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/
+          ssh -i ~/.ssh/r101_linode ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+          cd /
+          IMAGE_TAG=${{ github.sha }} docker compose up -d
