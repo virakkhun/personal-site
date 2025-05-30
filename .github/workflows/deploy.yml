@@ -53,5 +53,4 @@ jobs:
           scp -o StrictHostKeyChecking=no -i ~/.ssh/r101_linode infra/conf.d/rakdotdev.conf $VPS_USER@$VPS_HOST:/etc/nginx/conf.d/rakdotdev.space.conf
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/r101_linode $VPS_USER@$VPS_HOST \
             IMAGE_TAG=${{ github.sha }} docker compose up -d \
-            ln -s /etc/nginx/conf.d/rakdotdev.space.conf /etc/nginx/site-enabled/ \
             systemctl reload nginx
