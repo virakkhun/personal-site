@@ -1,7 +1,5 @@
-version: '3.9'
-
 services:
-  web:
+  rakdotdev-web:
     image: virak01/rakdotdev.space:${IMAGE_TAG}
     ports:
       - '80:80'
