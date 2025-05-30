@@ -33,12 +33,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Switch dir
-        run: cd infra
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: ./infra
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rakdotdev.space:${{ github.sha }}
 
@@ -52,7 +50,7 @@ jobs:
 
       - name: SSH to VPS
         run: |
-          scp -i ~/.ssh/r101_linode docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/
+          scp -i ~/.ssh/r101_linode infra/docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/docker-compose.yml
           ssh -i ~/.ssh/r101_linode ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
           cd /
           IMAGE_TAG=${{ github.sha }} docker compose up -d
