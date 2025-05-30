@@ -44,6 +44,7 @@ jobs:
         run: |
           mkdir ~/.ssh
           touch ~/.ssh/r101_linode
-          echo "${{ secrets.PRIVATE_KEY }}" >> ~/r101_linode
+          echo "${{ secrets.PRIVATE_KEY }}" >> ~/.ssh/r101_linode
+          chmod -R 755 ~/.ssh
           scp -i ~/.ssh/r101_linode infra/docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/docker-compose.yml
           ssh -i ~/.ssh/r101_linode ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}; IMAGE_TAG=${{ github.sha }} docker compose up -d
