@@ -40,10 +40,6 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rakdotdev.space:${{ github.sha }}
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Setup SSH context
         run: |
           echo "${{ secrets.PRIVATE_KEY }}" >> ~/r101_linode
