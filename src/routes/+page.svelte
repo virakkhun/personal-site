@@ -11,13 +11,13 @@
 	<title>virak khun</title>
 	<meta
 		name="description"
-		content="a Software Engineer based in Phnom Penh, graduated from RUPP majored in Computer Science"
+		content="virak is a software engineer based in phnom penh, graduated from rupp majored in computer science"
 	/>
-	<meta name="keywords" content="virakkhun,khunvirak,khun virak,virak dev" />
+	<meta name="keywords" content="virakkhun, khunvirak, khun virak, virak dev" />
 	<meta property="og:title" content="virak khun" />
 	<meta
 		property="og:description"
-		content="a Software Engineer based in Phnom Penh, graduated from RUPP majored in Computer Science"
+		content="virak a software engineer based in phnom penh, graduated from rupp majored in computer science"
 	/>
 	<meta property="og:url" content="https://rakdotdev.space" />
 	<meta property="og:site_name" content="virak khun" />
@@ -33,7 +33,7 @@
 	<meta name="twitter:title" content="virak khun" />
 	<meta
 		property="twitter:description"
-		content="a Software Engineer based in Phnom Penh, graduated from RUPP majored in Computer Science"
+		content="virak a software engineer based in phnom penh, graduated from rupp majored in computer science"
 	/>
 	<meta
 		property="twitter:image"
@@ -48,7 +48,7 @@
 			"name": "virak khun",
 			"email": "mailto:dev.virakkhun@gmail.com",
 			"url": "https://rakdotdev.space",
-			"description": "a Software Engineer based in Phnom Penh, graduated from RUPP majored in Computer Science",
+			"description": "virak a software engineer based in phnom penh, graduated from rupp majored in computer science",
 			"jobTitle": "Software Engineer"
 		}
 	</script>

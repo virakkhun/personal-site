@@ -15,8 +15,6 @@
 <svelte:head>
 	<title>{data.title.replace(/-/g, ' ')}</title>
 	<meta name="description" content={data.content} />
-
-	<meta name="description" content={data.content} />
 	<meta property="og:url" content="https://rakdotdev.space/blogs/{data.title.replace(/-/g, ' ')}" />
 	<meta property="og:title" content={data.title} />
 	<meta property="og:description" content={data.content} />
