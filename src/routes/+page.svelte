@@ -19,7 +19,7 @@
 		property="og:description"
 		content="virak a software engineer based in phnom penh, graduated from rupp majored in computer science"
 	/>
-	<meta property="og:url" content="https://rakdotdev.space" />
+	<meta property="og:url" content="https://www.rakdotdev.space/" />
 	<meta property="og:site_name" content="virak khun" />
 	<meta property="og:locale" content="en-US" />
 	<meta
@@ -28,7 +28,7 @@
 	/>
 
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content="https://rakdotdev.space" />
+	<meta name="twitter:url" content="https://www.rakdotdev.space/" />
 	<meta name="twitter:domain" content="rakdotdev.space" />
 	<meta name="twitter:title" content="virak khun" />
 	<meta
@@ -39,6 +39,7 @@
 		property="twitter:image"
 		content="https://media.licdn.com/dms/image/v2/D5603AQE6EDPn_HqMdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1695958815370?e=2147483647&v=beta&t=9brfW4HANqoNceE_xNf4ebRtnLIcHPvZGrrDJdIuW74"
 	/>
+	<link rel="canonical" href="https://www.rakdotdev.space/" />
 
 	<script type="application/ld+json">
 		{
@@ -47,7 +48,7 @@
 			"images": "https://media.licdn.com/dms/image/v2/D5603AQE6EDPn_HqMdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1695958815370?e=2147483647&v=beta&t=9brfW4HANqoNceE_xNf4ebRtnLIcHPvZGrrDJdIuW74",
 			"name": "virak khun",
 			"email": "mailto:dev.virakkhun@gmail.com",
-			"url": "https://rakdotdev.space",
+			"url": "https://www.rakdotdev.space/",
 			"description": "virak a software engineer based in phnom penh, graduated from rupp majored in computer science",
 			"jobTitle": "Software Engineer"
 		}

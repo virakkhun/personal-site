@@ -10,20 +10,19 @@
 		{ link: `${base}/`, label: 'home' },
 		{ link: `${base}/blogs`, label: 'blogs' }
 	];
+	const title = data.title.replace(/-/g, ' ');
 </script>
 
 <svelte:head>
-	<title>{data.title.replace(/-/g, ' ')}</title>
+	<title>{title}</title>
 	<meta name="description" content={data.content} />
-	<meta property="og:url" content="https://rakdotdev.space/blogs/{data.title.replace(/-/g, ' ')}" />
-	<meta property="og:title" content={data.title} />
+	<meta property="og:url" content="https://rakdotdev.space/blogs/{title}/" />
+	<meta property="og:title" content={title} />
 	<meta property="og:description" content={data.content} />
-	<meta
-		name="twitter:url"
-		content="https://rakdotdev.space/blogs/{data.title.replace(/-/g, ' ')}"
-	/>
-	<meta name="twitter:title" content={data.title.replace(/-/g, ' ')} />
+	<meta name="twitter:url" content="https://rakdotdev.space/blogs/{title}/" />
+	<meta name="twitter:title" content={title} />
 	<meta property="twitter:description" content={data.content} />
+	<link rel="canonical" href="https://www.rakdotdev.space/blogs/{title}/" />
 </svelte:head>
 
 {#if data?.content}
